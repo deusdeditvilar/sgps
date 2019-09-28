@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  aplicacao:
+    image: alexdias/sgps
+    environment:
+      - AMBIENTE
+    command: python manage.py runserver --settings=SGPS.settings.prod 0:8000
+    ports:
+      - "8000:8000"
+    networks:
+      - main
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx:/etc/nginx/conf.d/default.conf:ro
+      - ./static:/usr/share/nginx/sgps/static
+    ports:
+      - "80:80"
+    networks:
+      - main
+    depends_on:
+      - aplicacao
+networks:
+  main:

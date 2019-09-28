@@ -1,0 +1,400 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5!important;
+}
+
+nav {
+    background-color: #014874;
+}
+
+img.userpicture {
+    margin-right: .3rem;
+}
+
+a {
+    color: #64939E!important;
+    text-decoration: none!important;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+hr {
+    margin-bottom: 1rem!important;
+    border: 0!important;
+    border-top: 1px solid rgba(0,0,0,.1)!important;
+}
+
+#barra {
+    width: 87vw;
+    margin-top: 0;
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+#main {
+    width: 87vw;
+    margin-top: 0;
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+
+.logo-site {
+    display: block;
+    float: left;
+    margin: 10px 0px 10px 15px;
+}
+
+#group-menu {
+    position: static;
+    float: left;
+    width: 25vw;
+    display: block;
+    opacity: 1;
+    flex-direction: column;
+    margin: 20px 20px 20px -5rem;
+}
+
+.item-group-menu {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #64939E;
+    letter-spacing: -1px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 20px 20px 20px 30px;
+    margin-bottom: 7px;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.item-group-menu:hover {
+    background-color: #FAFAFA;
+    color: #64939E;
+    text-decoration: none;
+}
+
+.item-group-menu-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #64939E;
+    letter-spacing: -1px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 20px 20px 20px 30px;
+    margin-bottom: 7px;
+    margin-left: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.item-group-menu-2:hover {
+    background-color: #FAFAFA;
+    color: #64939E;
+    text-decoration: none;
+}
+
+.icon-menu {
+    font-size: 20px;
+    margin-right: 20px;
+    color: #29A7F3;
+}
+
+#lateral-direita {
+    width: 66vw;
+    position: static;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo {
+    margin-top: 20px;
+    background-color: #fff;
+    border-right: 1px solid rgb(215, 215, 215);
+    border-left: 1px solid rgb(215, 215, 215);
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: #64939E;
+    text-transform: uppercase;
+    padding: 20px 20px 20px 20px;
+    background-color: #f5f5f5;
+}
+
+.sub-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #64939E;
+    letter-spacing: -1px;
+    padding: 20px 20px 0px 20px;
+}
+
+.contexto {
+    padding: 20px 20px 20px 20px;
+}
+
+.btn-group,
+.btn-group-vertical {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    float: right;
+    padding: 9px 10px 9px 9px;
+    vertical-align: middle;
+}
+
+.pesquisa {
+    position: relative;
+    height: 57px;
+}
+
+.pesquisa-conteudo {
+    float: right;
+}
+
+.btn-outline-success {
+    font-family: 'Montserrat', sans-serif;
+    color: #64939E!important;
+    border-color: #dee2e6!important;
+}
+
+.btn-outline-success:hover {
+    color: #64939E!important;
+    border-color: #dee2e6!important;
+    background-color: #e9ecef!important;
+}
+
+.box {
+    position: relative;
+    box-shadow: 0px 2px 4px 0px #DBDBDB;
+    border-radius: 0;
+    border-left: 5px solid;
+    border-color: #29A7F3;
+}
+
+.conteudo-box {
+    display: flex;
+    min-width: 191.67px;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 7px;
+}
+
+.avatar {
+    padding-right: 0px;
+}
+
+.jss645 {
+    color: #959EA3;
+    font-size: 12px;
+    user-select: none;
+    display: flex;
+    min-width: 250px;
+    align-items: center;
+}
+
+.jss646 {
+    color: #959EA3;
+    font-size: 12px;
+    user-select: none;
+    display: flex;
+    min-width: 150px;
+    align-items: center;
+}
+
+.jss647 {
+    color: #4A4A4A;
+    margin: -5px 0 0 0;
+    font-size: 16px;
+    user-select: none;
+    letter-spacing: -0.5px;
+}
+
+.jss648 {
+    color: #959EA3;
+    font-size: 12px;
+    user-select: none;
+    display: flex;
+    min-width: 130px;
+    align-items: center;
+}
+
+.bot-box {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff!important;
+    font-weight: 600;
+    font-size: 10px;
+    background-color: #29A7F3;
+    border-radius: 50px;
+    padding: 10px 20px 10px 20px;
+}
+
+.bot-box:hover {
+    font-family: 'Montserrat', sans-serif;
+    color: #4A4A4A!important;
+    font-weight: 600;
+    font-size: 10px;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+    padding: 10px 20px 10px 20px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.pos-bot-box {
+    float: right;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    background-color: white;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    border-radius: 0rem!important;
+}
+
+.userpicture {
+    border-radius: 50%;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #1976D2;
+    border-color: #1976D2!important;
+}
+
+.show>.btn-secondary.dropdown-toggle {
+    background-color: #1976D2!important;
+}
+
+.show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0rem rgba(130, 138, 145, .5)!important;
+}
+
+.btn-group-vertical>.btn,
+.btn-group>.btn {
+    background-color: #1976D2;
+}
+
+.btn-group-vertical>.btn,
+.btn-group>.btn:hover {
+    background-color: #2196F3;
+}
+
+.navbar-light .navbar-toggler {
+    color: #495057!important;
+    border-radius: inherit;
+    background-color: #f2f2f2;
+    font-size: 20px!important;
+    padding: 10px 20px 10px 20px;
+}
+
+.navbar-light .navbar-toggler:hover {
+    background-color: #FAFAFA;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.item-group-sidenav.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #0D47A1;
+    border-color: #002e5c;
+}
+
+.media-left {}
+
+.sidenav .closebtn {
+    position: absolute;
+    color: #495057;
+    top: 3px;
+    right: 25px;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+#cadastros {
+    color: #555;
+    font-size: 1rem;
+}
+
+#cadastros:hover {
+    color: green;
+}
+
+#sair:hover {
+    color: var(--danger);
+}
+
+#ativo-externo {
+    color: #111;
+}
+
+.ativo-interno {
+    color: green;
+}
+
+h1,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ## Barra de rolagem personalizada */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #1976D2;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #2196F3;
+}

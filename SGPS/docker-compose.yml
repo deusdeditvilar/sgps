@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  aplicacao:
+    image: alexdias/sgps:0.0.16-BETA
+    command: python3 manage.py runserver --settings=SGPS.settings.prod 0:8000
+    ports:
+      - "8000:8000"

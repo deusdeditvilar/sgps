@@ -1,0 +1,157 @@
+body {
+    background-color: #014874!important;
+}
+
+#main {
+    width: 30vw;
+    margin-top:10vw;
+    margin-left:auto;
+    margin-bottom:0;
+    margin-right:auto;
+
+}
+
+.logo-site {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.botao.btn-formulario {
+    background-color: #4FA4F5;
+    visibility: visible;
+    font-size: 0.90em;
+    width: 100%;
+    margin: 20px auto;
+    color: #fff;
+    font-weight: 600;
+    -webkit-box-shadow: 0px 4px 3px -3px #616161;
+    -moz-box-shadow: 0px 4px 3px -3px #616161;
+    box-shadow: 0px 4px 3px -3px #616161;
+}
+
+.botao.btn-formulario:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sag-button {
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    height: 45px;
+    position: relative;
+}
+
+.campo-formulario {
+    border-bottom: 1px solid #CDD9DE;
+    line-height: 2;
+    margin: 15px 0 0 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    -webkit-transition: opacity 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition: opacity 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition: opacity 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition: opacity 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition: opacity 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -webkit-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+}
+
+
+
+.row {
+    margin-top: 12.5rem;
+    margin-bottom: 10rem;
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.card {
+    width: 50rem;
+}
+
+
+
+.card-header,
+.card-footer {
+    background-color: lightgrey;
+}
+
+#entrar {
+    background-color: #1976D2;
+}
+
+#entrar:hover {
+    background-color: #2196F3;
+}
+
+#botoes {
+    background-color: #D3D4DD;
+}
+
+#botoes:hover {
+    background-color: #94959B;
+}
+
+#voltar:hover {
+    background-color: #94959B;
+}
+
+#form {
+    margin-top: 1rem;
+    margin-right: 12px;
+}
+
+.form-group {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    width: 16rem;
+}
+
+body {
+    text-align: center;
+    color: lightgrey;
+    background-color: #014874;
+}
+
+
+/*.form-control {
+    border-radius: 1.25rem;
+}*/
+
+
+/* ## Barra de rolagem personalizada */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,303 @@
+{% extends 'menu.html' %}
+{% load static %}
+
+
+{% block title %}
+Cadastrar Crianças - Sistema de Gerenciamento de Programas Sociais
+{% endblock %}
+
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<link rel="stylesheet" href="{% static 'js/jquery.maskedinput-1.1.4.pack.js' %}">
+<script type="text/javascript">
+
+  $(document).ready(() => {
+    $("#cep").mask('99999-999');
+    $("#telefone").mask('(99) 99999-9999');
+  });
+
+  function limpa_formulário_cep() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('rua').value = ("");
+    document.getElementById('bairro').value = ("");
+    document.getElementById('cidade').value = ("");
+  }
+
+  function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+      //Atualiza os campos com os valores.
+      document.getElementById('rua').value = (conteudo.logradouro);
+      document.getElementById('bairro').value = (conteudo.bairro);
+      document.getElementById('cidade').value = (conteudo.localidade);
+    } //end if.
+    else {
+      //CEP não Encontrado.
+      limpa_formulário_cep();
+      alert("CEP não encontrado.");
+    }
+  }
+
+  function pesquisacep(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if (validacep.test(cep)) {
+
+        //Preenche os campos com "..." enquanto consulta webservice.
+        document.getElementById('rua').value = "...";
+        document.getElementById('bairro').value = "...";
+        document.getElementById('cidade').value = "...";
+
+        //Cria um elemento javascript.
+        var script = document.createElement('script');
+
+        //Sincroniza com o callback.
+        script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+        //Insere script no documento e carrega o conteúdo.
+        document.body.appendChild(script);
+
+      } //end if.
+      else {
+        //cep é inválido.
+        limpa_formulário_cep();
+        alert("Formato de CEP inválido.");
+      }
+    } //end if.
+    else {
+      //cep sem valor, limpa formulário.
+      limpa_formulário_cep();
+    }
+  };
+
+  window.onload = function () {
+    document.getElementById('ifYes').style.display = 'none';
+    document.getElementById('ifNo').style.display = 'none';
+  }
+  function yesnoCheck() {
+    if (document.getElementById('usoMed').checked) {
+      document.getElementById('simUsoMed').style.display = 'block';
+    }
+    if (document.getElementById('usoDepQuim').checked) {
+      document.getElementById('simDepQuim').style.display = 'block';
+    }
+    if (document.getElementById('usoMedCtrl').checked) {
+      document.getElementById('simUsoMedCtrl').style.display = 'block';
+    }
+  }
+
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="titulo">
+  <span>
+    CADASTRAR CRIANÇAS
+  </span>
+</div>
+<div class="sub-titulo">
+  <span>
+    Informações Pessoais
+  </span>
+  <hr style="background-color: lightgrey;">
+</div>
+
+<div class="contexto">
+  <form>
+    <!--class="was-validated"-->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputNome">Nome</label>
+        <input type="text" class="form-control" id="inputNome" placeholder="Nome Completo" >
+        <div class="invalid-feedback">Este campo é obrigatório</div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputDataNasc">Data de Nasc.</label>
+        <input type="date" class="form-control" id="inputDataNasc">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputDataNasc">Sexo</label>
+        <select class="custom-select" >
+          <option value="">Informe o sexo</option>
+          <option value="1">M</option>
+          <option value="2">F</option>
+        </select>
+        <div class="invalid-feedback">Campo obrigatório</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputNomePai">Nome do Pai</label>
+        <input type="text" class="form-control" id="inputNomePai" placeholder="Nome do Pai Completo" >
+        <div class="invalid-feedback">Este campo é obrigatório</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputNomeMae">Nome da Mãe</label>
+        <input type="text" class="form-control" id="inputNomeMae" placeholder="Nome da Mãe Completo">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputNatu">Naturalidade</label>
+        <input type="text" class="form-control" id="inputNatu" placeholder="Naturalidade" >
+      </div>
+      <div class="form-group col-md-2">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" maxlength="9" id="cep" placeholder="CEP"
+          onblur="pesquisacep(this.value);" >
+      </div>
+      <div class="form-group col-md-4">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade" placeholder="Cidade" >
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro" placeholder="Bairro" >
+      </div>
+      <div class="form-group col-md-8">
+        <label for="rua">Endereço</label>
+        <input type="text" class="form-control" id="rua" placeholder="Endereço" >
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="situacao_escolar">Situação Escolar</label>
+        <input type="text" class="form-control" id="situacao_escolar" placeholder="Situação Escolar" >
+      </div>
+      <div class="form-group col-md-8">
+        <label for="nome_escola">Nome da Escola</label>
+        <input type="text" class="form-control" id="nome_escola" placeholder="Nome da Escola" >
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputSerie">Série</label>
+        <select class="custom-select" >
+          <option value="">Informe a série</option>
+          <option value="1">1ª</option>
+          <option value="2">2ª</option>
+          <option value="3">3ª</option>
+          <option value="4">4ª</option>
+          <option value="5">5ª</option>
+          <option value="6">6ª</option>
+          <option value="7">7ª</option>
+          <option value="8">8ª</option>
+          <option value="9">9ª</option>
+          <option value="10">1º Ano</option>
+          <option value="11">2° Ano</option>
+          <option value="12">3º Ano</option>
+        </select>
+        <div class="invalid-feedback">Campo obrigatório</div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputTurno">Turno</label>
+        <select class="custom-select" >
+          <option value="">Informe o turno</option>
+          <option value="1">Manhã</option>
+          <option value="2">Tarde</option>
+          <option value="3">Noite</option>
+        </select>
+        <div class="invalid-feedback">Campo obrigatório</div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" placeholder="Telefone" >
+      </div>
+      <div class="form-group col-md-3">
+        <label for="parentesco">Parentesco</label>
+        <input type="text" class="form-control" id="parentesco" placeholder="Parentesco" >
+      </div>
+    </div>
+</div>
+
+<div class="sub-titulo">
+  <span>
+    Condições de Saúde
+  </span>
+  <hr style="background-color: lightgrey;">
+</div>
+
+<div class="contexto">
+  <!--class="was-validated"-->
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <input type="checkbox" id="diabetico" />
+      <label>Diabético</label>
+    </div>
+
+    <div class="form-group col-md-4">
+      <input type="checkbox" onclick="javascript:yesnoCheck();" name="yesno" id="usoMed" />
+      <label>Faz uso contínuo de medicamento?</label>
+      <div id="simUsoMed" style="display:none">
+        <input type="text" class="form-control" id="usomedicamento" placeholder="Uso de">
+      </div>
+    </div>
+
+    <div class="form-group col-md-5">
+      <input type="checkbox" onclick="javascript:yesnoCheck();" name="yesno" id="usoDepQuim" />
+      <label>Alguém é dependente químico?</label>
+      <div id="simDepQuim" style="display:none">
+        <input type="text" class="form-control" id="dependentequim" placeholder="Uso de">
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <input type="checkbox" id="pressaoalta" />
+      <label>Tem pressão alta?</label>
+    </div>
+    <div class="form-group col-md-3">
+      <input type="checkbox" id="sofredoenca" />
+      <label>Sofre de alguma doença?</label>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="checkbox" id="alergia" />
+      <label>Tem alergia a algum medicamento?</label>
+    </div>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <input type="checkbox" onclick="javascript:yesnoCheck();" name="yesno" id="usoMedCtrl" />
+      <label>Toma algum remédio Controlado?</label>
+      <div id="simUsoMedCtrl" style="display:none">
+        <input type="text" class="form-control" id="usomedicamentoctrl" placeholder="Uso de">
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="checkbox" id="prioritario" />
+      <label>Prioritátio?</label>
+    </div>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <label for="obs">Observações</label>
+      <textarea id="obs" placeholder="Observações"></textarea>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary btn-block btn-large">Salvar</button>
+</div>
+
+
+</form>
+
+{% endblock %}

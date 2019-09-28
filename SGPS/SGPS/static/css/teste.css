@@ -1,0 +1,176 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logomarca {
+    width: 165px;
+    height: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.userpicture {
+    border-radius: 50%;
+}
+
+img.userpicture {
+    margin-right: .3rem;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #1976D2;
+    border-color: #1976D2!important;
+}
+
+.show>.btn-secondary.dropdown-toggle {
+    background-color:#1976D2!important;
+}
+
+.show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0rem rgba(130,138,145,.5)!important;
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn {
+    background-color: #1976D2;
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn:hover {
+    background-color: #2196F3;
+}
+
+.navbar-light .navbar-toggler {
+    color: #495057!important;
+    border-radius: inherit;
+    background-color: #f2f2f2;
+    font-size: 20px!important;
+    padding: 10px 20px 10px 20px;
+}
+
+.navbar-light .navbar-toggler:hover {
+    background-color: #FAFAFA;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.group-sidenav {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 0px 20px;
+}
+
+.item-group-sidenav {
+    font-size: 16px;
+    color: #495057;
+    letter-spacing: -1px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.item-group-sidenav:hover {
+    background-color: #FAFAFA;
+    color: #495057;
+    text-decoration: none;
+}
+
+.item-group-sidenav.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #0D47A1;
+    border-color: #002e5c;
+}
+
+.media-left {
+    margin-right: 5px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    color: #495057;
+    top: 3px;
+    right: 25px;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+#cadastros {
+    color: #555;
+    font-size: 1rem;
+}
+
+#cadastros:hover {
+    color: green;
+}
+
+#sair:hover {
+    color: var(--danger);
+}
+
+#ativo-externo {
+    color: #111;
+}
+
+.ativo-interno {
+    color: green;
+}
+
+#main {
+    transition: margin-left .5s;
+    /* padding: 16px;*/
+}
+
+
+h1,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: #0D47A1;
+}
+
+
+/* ## Barra de rolagem personalizada */
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

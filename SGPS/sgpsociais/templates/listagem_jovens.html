@@ -1,0 +1,80 @@
+{% extends 'menu.html' %}
+
+{% block title %}
+ Listagem Jovens - Sistema de Gerenciamento de Programas Sociais
+{% endblock %}
+
+
+{% block content %}
+<div class="titulo">
+        <span>
+            LISTA DE JOVENS
+        </span>
+    </div>
+
+    <div class="contexto">
+
+        <div class="pesquisa">
+            <div class="pesquisa-conteudo">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                 </form>
+            </div>
+        </div>    
+    {% for pessoa in lista %}
+        <div class="box">
+            <div class="conteudo-box">
+                <span class="avatar current"><img src="http://sosfisica.com.br/moodle/theme/image.php/boost/core/1553449005/u/f2" class="userpicture defaultuserpic" width="50 " height="50" role="presentation
+            " aria-hidden="true"></span>
+
+                <div>
+                    <span class="jss645">Nome</span>
+                    <p class="jss647">{{ pessoa.nome }}</p>
+                </div>
+
+                <div>
+                    <span class="jss646">Data de nascimento</span>
+                    <p class="jss647">17/05/1999</p>
+                </div>
+
+                <div>
+                    <span class="jss648">Sexo</span>
+                    <p class="jss647">Masculino</p>
+                </div>
+
+                <div>
+                    <span class="jss648">Naturalidade</span>
+                    <p class="jss647">Itaporanga</p>
+                </div>
+
+                <a href="#">
+                <span class="bot-box">VER MAIS</span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+       <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->             
+
+
+    </div>
+</div>
+
+{% endblock %}

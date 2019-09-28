@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/principal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dd64c0f8b3.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'imgs/favicon.png' %}">
+    <title> 
+        {% block title %}
+
+        {% endblock %}
+    </title>
+
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light">
+        <div id="barra">
+            <div class="logo-site">
+                <a href="inicio.html"><img src="{% static 'imgs/logo.png' %}" height="46"></a>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true aria-expanded=" false ">
+                    <span class="avatars "><span class="avatar current"><img src="{{STATIC_URL}}http://sosfisica.com.br/moodle/theme/image.php/boost/core/1553449005/u/f2" class="userpicture defaultuserpic" width="35 " height="35 " role="presentation
+                    " aria-hidden="true"></span></span>
+                   {{user.username|slugify}}
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">
+                        <a href="{% url 'sgps:preferencias' %}">
+                            <span class="media-left">
+                                <i class="icon fa fa-wrench fa-fw"></i>
+                            </span> 
+                            Preferências
+                        </a>
+                    </button>
+                    <form method="post" action="{% url 'sgps:logoff' %}">
+                        {% csrf_token %}
+                   <button class="dropdown-item" type="submit">
+                        <a >
+                            <span class="media-left">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span> 
+                            Sair
+                        </a>
+                    </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div id="main">
+
+        <div id="group-menu">
+                <a class="item-group-menu" href="{% url 'sgps:home' %}">
+                    <span class="icon-menu">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span>Página inicial</span>
+                </a>
+
+                <a class="item-group-menu"  data-toggle="collapse" data-target="#cadastro" aria-controls="cadastro" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="icon-menu">
+                        <i class="fas fa-folder-plus"></i>
+                    </span>
+                    <span>Cadastrar</span>
+                </a>
+
+                <div class="collapse" id="cadastro" style=" ">
+                        <a class="item-group-menu-2" href="{% url 'sgps:cadastro_crianca' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-child"></i>
+                                 </span>
+                            <span>Crianças</span>
+                        </a>
+                        <a class="item-group-menu-2" href="{% url 'sgps:cadastro_jovem' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-walking"></i>
+                                 </span>
+                            <span>Jovens</span>
+                        </a>
+                        <a class="item-group-menu-2" href="{% url 'sgps:cadastro_idoso' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-blind"></i>
+                                 </span>
+                            <span>Idosos</span>
+                        </a>
+                </div>
+
+                <a class="item-group-menu" href="#" data-toggle="collapse" data-target="#sobreNos" aria-controls="sobreNos" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="icon-menu">
+                        <i class="fas fa-list-ul"></i>
+                    </span>
+                    <span>Listar Cadastros</span>
+                </a>
+
+                <div class="collapse" id="sobreNos" style=" ">
+                        <a class="item-group-menu-2" href="{% url 'sgps:listar_crianca' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-child"></i>
+                                 </span>
+                            <span>Crianças</span>
+                        </a>
+                        <a class="item-group-menu-2" href="{% url 'sgps:listar_jovem' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-walking"></i>
+                                 </span>
+                            <span>Jovens</span>
+                        </a>
+                        <a class="item-group-menu-2" href="{% url 'sgps:listar_idoso' %}">
+                            <span class="icon-menu">
+                                    <i class="fas fa-blind"></i>
+                                 </span>
+                            <span>Idosos</span>
+                        </a>
+                </div>
+
+
+                <a class="item-group-menu" href="{% url 'sgps:suporte' %}">
+                    <span class="icon-menu"> 
+                        <i class="fas fa-address-book"></i>
+                    </span>
+                    <span>Suporte</span>
+                </a>
+
+        </div>
+
+        
+
+
+        <div id="lateral-direita">
+            <div class="conteudo">
+              {% block content %}
+
+              {% endblock %}
+         </div>
+    </div>
+
+
+    <script rel="stylesheet " src="{% static 'js/teste.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
